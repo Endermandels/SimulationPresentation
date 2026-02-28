@@ -5,6 +5,6 @@ class_name Battle
 @export var animation_controller: AnimationController
 
 func _process(_delta: float) -> void:
-    if Input.is_action_just_pressed("select"):
+    if Input.is_action_just_pressed("select") and animation_controller.done_animating:
         var res = battle_controller.step()
         animation_controller.animate_attack(res)
