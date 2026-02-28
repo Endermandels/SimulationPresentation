@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw6ecxxa7bqio"]
+
+[ext_resource type="Script" uid="uid://cpyamgweykpq2" path="res://scripts/battle_controller.gd" id="1_dn72j"]
+[ext_resource type="Script" uid="uid://boffip13o15x6" path="res://scripts/unit.gd" id="2_a12nh"]
+[ext_resource type="Resource" uid="uid://dqxiti8biwll6" path="res://resources/player.tres" id="3_lpir7"]
+[ext_resource type="Resource" uid="uid://bysl4gx2kgjxo" path="res://resources/wolf.tres" id="4_6vh42"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0.0427, 0.051800005, 0.07, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0.88, 0.88, 0.88, 1)
+
+[node name="BattleController" type="Node" parent="."]
+script = ExtResource("1_dn72j")
+unit_queue = Array[ExtResource("2_a12nh")]([ExtResource("3_lpir7"), ExtResource("4_6vh42")])
