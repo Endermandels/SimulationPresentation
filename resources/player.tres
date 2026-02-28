@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="Unit" load_steps=2 format=3 uid="uid://dqxiti8biwll6"]
+[gd_resource type="Resource" script_class="Unit" load_steps=3 format=3 uid="uid://dqxiti8biwll6"]
 
 [ext_resource type="Script" uid="uid://boffip13o15x6" path="res://scripts/unit.gd" id="1_rjq7u"]
+[ext_resource type="Texture2D" uid="uid://dty1lxuknomd3" path="res://assets/Adventurer Female Sprite Sheet.png" id="2_dk6ju"]
 
 [resource]
 script = ExtResource("1_rjq7u")
 name_id = "Player"
+is_enemy = false
+texture = ExtResource("2_dk6ju")
 metadata/_custom_type_script = "uid://boffip13o15x6"

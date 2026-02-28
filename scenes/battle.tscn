@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw6ecxxa7bqio"]
+[gd_scene load_steps=8 format=3 uid="uid://bw6ecxxa7bqio"]
 
+[ext_resource type="Script" uid="uid://dlfj78g3w2ryv" path="res://scripts/battle.gd" id="1_4k1nj"]
 [ext_resource type="Script" uid="uid://cpyamgweykpq2" path="res://scripts/battle_controller.gd" id="1_dn72j"]
 [ext_resource type="Script" uid="uid://boffip13o15x6" path="res://scripts/unit.gd" id="2_a12nh"]
 [ext_resource type="Resource" uid="uid://dqxiti8biwll6" path="res://resources/player.tres" id="3_lpir7"]
-[ext_resource type="Resource" uid="uid://bysl4gx2kgjxo" path="res://resources/wolf.tres" id="4_6vh42"]
+[ext_resource type="Resource" uid="uid://bysl4gx2kgjxo" path="res://resources/ferret.tres" id="4_6vh42"]
+[ext_resource type="Script" uid="uid://dpmm8q2ng0ag5" path="res://scripts/unit_spawner.gd" id="6_4k1nj"]
+[ext_resource type="Script" uid="uid://b3wvlfaey7jrm" path="res://scripts/animation_controller.gd" id="6_f4pi3"]
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" node_paths=PackedStringArray("battle_controller", "animation_controller")]
+script = ExtResource("1_4k1nj")
+battle_controller = NodePath("BattleController")
+animation_controller = NodePath("AnimationController")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 320.0
@@ -21,3 +27,19 @@ color = Color(0.88, 0.88, 0.88, 1)
 [node name="BattleController" type="Node" parent="."]
 script = ExtResource("1_dn72j")
 unit_queue = Array[ExtResource("2_a12nh")]([ExtResource("3_lpir7"), ExtResource("4_6vh42")])
+
+[node name="AnimationController" type="Node" parent="."]
+script = ExtResource("6_f4pi3")
+
+[node name="UnitSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points", "battle_controller")]
+script = ExtResource("6_4k1nj")
+spawn_points = NodePath("../SpawnPoints")
+battle_controller = NodePath("../BattleController")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="SpawnPoints"]
+position = Vector2(64, 152)
+
+[node name="Node2D2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(256, 152)

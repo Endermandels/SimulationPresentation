@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=3 format=3 uid="uid://bysl4gx2kgjxo"]
+
+[ext_resource type="Script" uid="uid://boffip13o15x6" path="res://scripts/unit.gd" id="1_irg1d"]
+[ext_resource type="Texture2D" uid="uid://40lf5l2plj3j" path="res://assets/Ferret Sprite Sheet.png" id="2_7vknp"]
+
+[resource]
+script = ExtResource("1_irg1d")
+name_id = "Ferret"
+hp = 3
+atk = 3
+texture = ExtResource("2_7vknp")
+metadata/_custom_type_script = "uid://boffip13o15x6"
