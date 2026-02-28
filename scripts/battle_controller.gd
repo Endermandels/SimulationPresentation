@@ -1,7 +1,11 @@
 extends Node
 class_name BattleController
 
-@export var unit_queue: Array[Unit] = []
+var unit_queue: Array[UnitRuntime] = []
+
+func add_unit(unit_runtime: UnitRuntime) -> void:
+    unit_queue.append(unit_runtime)
+    add_child(unit_runtime)
 
 func step() -> Dictionary:
     var cur_unit = unit_queue.pop_front()

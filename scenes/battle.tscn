@@ -26,13 +26,13 @@ color = Color(0.88, 0.88, 0.88, 1)
 
 [node name="BattleController" type="Node" parent="."]
 script = ExtResource("1_dn72j")
-unit_queue = Array[ExtResource("2_a12nh")]([ExtResource("3_lpir7"), ExtResource("4_6vh42")])
 
 [node name="AnimationController" type="Node" parent="."]
 script = ExtResource("6_f4pi3")
 
 [node name="UnitSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points", "battle_controller")]
 script = ExtResource("6_4k1nj")
+units = Array[ExtResource("2_a12nh")]([ExtResource("3_lpir7"), ExtResource("4_6vh42")])
 spawn_points = NodePath("../SpawnPoints")
 battle_controller = NodePath("../BattleController")
 
